@@ -1,0 +1,11 @@
+.card-body {
+    align-self: center;
+}
+
+#grid-container {
+    padding: 0;
+}
+
+.card:hover {
+    border: 1px solid cornflowerblue;
+}
