@@ -25,6 +25,7 @@ namespace ConnectedCellsApi.Controllers
             bool[,] visited = new bool[total_rows, total_cols];
             List<int> clusterSize = new List<int>();
             
+            // Iterate through each of the nodes, and call DFS if the node is not visited and the value is 1
             for (int row = 0; row < total_rows; row++)
             {
                 for (int col = 0; col < total_cols; col++)
@@ -44,8 +45,10 @@ namespace ConnectedCellsApi.Controllers
 
             visited[row, col] = true;
 
+            // Iterate through each of the node's neighbor
             for(int i = -1; i < 2; i++) {
                 for(int j = -1; j < 2; j++) {
+                    // boundary conditions
                     if(row+i < 0 || row+i == total_rows || col+j < 0 || col+j == total_cols || (row+i == row && col+j == col) ){
                         continue;
                     }
